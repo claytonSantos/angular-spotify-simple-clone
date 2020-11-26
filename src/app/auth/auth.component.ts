@@ -22,10 +22,7 @@ export class Auth {
     my_client_id = "edda27b666594582bf5ac591448c9d78";
 
     scopes = [
-        "user-read-currently-playing",
-        "user-read-playback-state",
-        "user-top-read",
-        "user-modify-playback-state",
+
     ];
 
     redirect_uri_encoded = encodeURIComponent(this.redirect_uri)
