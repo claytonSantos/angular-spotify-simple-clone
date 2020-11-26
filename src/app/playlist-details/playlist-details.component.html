@@ -1,0 +1,42 @@
+<div class="singlePlaylistContent">
+    <header class="singlePlaylistHeader">
+        <div class="overlay-wrapper">
+            <img src="{{albumImg}}" alt="">
+            <div class="overlay"></div>
+        </div>
+    </header>
+    <div class="singlePlaylistBody">
+        <ul class="tracks">
+            <li *ngFor="let track of tracks" [ngClass]="{'active': track.track.id === activeTrack?.track?.id}"
+                class="track">
+                <i *ngIf="!isPlaying || !(track.track.id === activeTrack?.track?.id)" (click)="play(track)"
+                    class="material-icons md-dark">play_arrow</i>
+                <i *ngIf="isPlaying && (track.track.id === activeTrack?.track?.id)" (click)="stop()"
+                    class="material-icons md-dark">pause</i>
+                <p class="track__name">{{track.track.name}}</p>
+            </li>
+        </ul>
+    </div>
+    <footer class="singlePlaylistFooter">
+        <div class="player">
+            <div style="width: 640px; height: 0px;"></div>
+            <div class="player__controls">
+                <span (click)="previous()" class="material-icons md-dark">
+                    fast_rewind
+                </span>
+                <div class="m-x-bs">
+                    <i *ngIf="!isPlaying" (click)="handleAudioPlay()" class="material-icons md-dark">
+                        play_arrow
+                    </i>
+                    <i *ngIf="isPlaying" (click)="stop()" class="material-icons md-dark">
+                        pause
+                    </i>
+                </div>
+                <span class="material-icons md-dark" (click)="nextAudio()">
+                    fast_forward
+                </span>
+            </div>
+        </div>
+    </footer>
+    <app-loading [isLoading]="isLoading"></app-loading>
+</div>

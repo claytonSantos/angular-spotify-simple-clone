@@ -1,0 +1,72 @@
+<div class="playlists">
+    <aside class="playlists__aside">
+        <div class="logo__container">
+            <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" width="40" height="40">
+            Angular
+        </div>
+        <div class="playlists__aside--align-top playlists__aside-action-list ">
+            <div data-tip="Ação não implementada até o momento"
+                class="icon-label-block playlists__aside-action-list-item playlists__aside-action-list-item--selected">
+                <span class="material-icons">
+                    home
+                </span>
+                <span title="Ação não implementada até o momento">Início</span>
+            </div>
+            <div data-tip="Ação não implementada até o momento"
+                class="icon-label-block playlists__aside-action-list-item">
+                <span class="material-icons">
+                    search
+                </span>
+                <span title="Ação não implementada até o momento">Buscar</span>
+            </div>
+            <div data-tip="Ação não implementada até o momento"
+                class="icon-label-block playlists__aside-action-list-item">
+                <span class="material-icons">
+                    check_circle
+                </span>
+                <div routerLink="/todos" class="aside__playlist-actions-item">
+                    Todos
+                </div>
+            </div>
+            <div data-tip="Ação não implementada até o momento"
+                class="icon-label-block playlists__aside-action-list-item">
+                <span class="material-icons">
+                    bug_report
+                </span>
+                <div routerLink="/bugs" class="aside__playlist-actions-item">
+                    Bugs
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="playlists__body">
+        <div class="container">
+            <header class="header playlists__header">
+                <div class="header__align--left">
+                    <div class="user">
+                        <div class="user__avatar">
+                            <img [src]="user?.images[0]?.url" alt="" />
+                        </div>
+                        <div>
+                            <label class="user__name">{{user?.display_name}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__align--rigth">
+                    <div class="playlist__help">
+                        <span class="material-icons icon playlists__header-icon">
+                            help
+                        </span>
+                        <small>
+                            Clique duas vezes no album para ver as musicas
+                        </small>
+                    </div>
+                </div>
+            </header>
+            <app-playlist-carousel [categorie]="'family'"></app-playlist-carousel>
+            <app-playlist-carousel [categorie]="'toplists'"></app-playlist-carousel>
+            <app-playlist-carousel [categorie]="'party'"></app-playlist-carousel>
+        </div>
+    </div>
+    <app-loading [isLoading]="isLoading"></app-loading>
+</div>

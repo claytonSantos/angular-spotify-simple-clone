@@ -1,0 +1,4 @@
+<div class="row__posters">
+    <img *ngFor="let image of images" class="row__poster" [src]="image.path" (click)="clicked(image.idPlaylist)"
+        alt="alt">
+</div>
