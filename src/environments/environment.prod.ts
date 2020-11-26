@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   API: '/',
-  REDIRECT_URI: 'https://fervent-haibt-874730.netlify.app/login'
+  REDIRECT_URI: 'https://adoring-joliot-1a89c0.netlify.app/login'
 };
